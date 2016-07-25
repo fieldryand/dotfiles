@@ -3,7 +3,7 @@
 USER=`whoami`
 
 # package dependencies
-sudo apt-get -y install curl vim zsh virtualbox silversearcher-ag libreadline-dev zlib1g-dev
+sudo apt-get -y install curl neovim zsh virtualbox silversearcher-ag libreadline-dev zlib1g-dev
 chsh -s /usr/bin/zsh
 
 # oh-my-zsh
@@ -13,14 +13,8 @@ test -d /home/$USER/.oh-my-zsh || curl -L https://raw.github.com/robbyrussell/oh
 cp -r ./dotfiles/.* ~/
 source ~/.zshrc
 
-# vim-pathogen
-test -d ~/.vim/autoload || mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-
-# vim plugins
-test -d ~/.vim/bundle/nerdtree || git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
-test -d ~/.vim/bundle/nerdcommenter || git clone https://github.com/scrooloose/nerdcommenter.git ~/.vim/bundle/nerdcommenter
-test -d ~/.vim/bundle/vim-coffee-script/ || git clone https://github.com/kchmck/vim-coffee-script.git ~/.vim/bundle/vim-coffee-script/
-test -d ~/.vim/bundle/ag || git clone https://github.com/rking/ag.vim  ~/.vim/bundle/ag
+# neovim-plug
+test -d ~/.config/nvim || curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # pyenv and python(s)
 sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm
