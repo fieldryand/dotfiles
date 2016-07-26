@@ -24,7 +24,7 @@ ZSH_THEME="gnzh"
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
-DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE=true
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
@@ -83,8 +83,18 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-#alias vim="vim --servername VIM"
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-# source ~/.rvm/scripts/rvm
 #
-alias tmux="TERM=screen-256color-bce tmux"
+
+# Change the TERM environment variable (to get 256 colors) even if you are
+# accessing your system through ssh and using either Tmux or GNU Screen:
+if [ "$TERM" = "xterm" ] || [ "$TERM" = "xterm-256color" ]
+then
+    export TERM=xterm-256color
+    export HAS_256_COLORS=yes
+fi
+if [ "$TERM" = "screen" ] && [ "$HAS_256_COLORS" = "yes" ]
+then
+    export TERM=screen-256color
+fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

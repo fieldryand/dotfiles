@@ -2,6 +2,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'jalvesaq/Nvim-R'
 Plug 'flazz/vim-colorschemes'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 call plug#end()
 
@@ -42,4 +43,8 @@ set sw=4
 " Search "vim colorscheme 256" in the internet and download color
 " schemes that supports 256 colors in the terminal emulator. Then,
 " uncomment the code below to set you color scheme:
-colorscheme wombat
+colorscheme southernlights
+
+" Line numbers
+set number
+
