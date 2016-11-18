@@ -45,7 +45,7 @@ set sw=4
 " Search "vim colorscheme 256" in the internet and download color
 " schemes that supports 256 colors in the terminal emulator. Then,
 " uncomment the code below to set you color scheme:
-colorscheme southernlights
+colorscheme jellybeans
 
 " Line numbers
 set number
@@ -54,3 +54,5 @@ set number
 autocmd FileType r inoremap <buffer> > <Esc>:normal! a %>%<CR>a 
 autocmd FileType rnoweb inoremap <buffer> > <Esc>:normal! a %>%<CR>a 
 autocmd FileType rmd inoremap <buffer> > <Esc>:normal! a %>%<CR>a 
+
+let R_vsplit = 1
