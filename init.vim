@@ -51,8 +51,9 @@ colorscheme jellybeans
 set number
 
 " Map magrittr pipe operator to >
-autocmd FileType r inoremap <buffer> > <Esc>:normal! a %>%<CR>a 
+autocmd FileType r inoremap <buffer> <M->> <Esc>:normal! a %>%<CR>a 
 autocmd FileType rnoweb inoremap <buffer> > <Esc>:normal! a %>%<CR>a 
 autocmd FileType rmd inoremap <buffer> > <Esc>:normal! a %>%<CR>a 
 
 let R_vsplit = 1
+let R_assign_map = "<M-->"
