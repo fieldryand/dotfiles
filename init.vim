@@ -4,7 +4,11 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'jalvesaq/Nvim-R'
 Plug 'flazz/vim-colorschemes'
+Plug 'chrisbra/csv.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'jpalardy/vim-slime'
+Plug 'vim-syntastic/syntastic'
+Plug 'zchee/deoplete-jedi'
 
 call plug#end()
 
@@ -38,22 +42,26 @@ set hlsearch
 " Show where the next pattern is as you type it:
 set incsearch
 
-" By default, Vim indents code by 8 spaces. Most people prefer 4
-" spaces:
-set sw=4
-
-" Search "vim colorscheme 256" in the internet and download color
-" schemes that supports 256 colors in the terminal emulator. Then,
-" uncomment the code below to set you color scheme:
-colorscheme jellybeans
-
 " Line numbers
 set number
 
 " Map magrittr pipe operator to >
-autocmd FileType r inoremap <buffer> <M->> <Esc>:normal! a %>%<CR>a 
-autocmd FileType rnoweb inoremap <buffer> > <Esc>:normal! a %>%<CR>a 
-autocmd FileType rmd inoremap <buffer> > <Esc>:normal! a %>%<CR>a 
+autocmd FileType r inoremap <buffer> <M->> <Esc>:normal! a %>%<CR>a
+autocmd FileType rnoweb inoremap <buffer> > <Esc>:normal! a %>%<CR>a
+autocmd FileType rmd inoremap <buffer> > <Esc>:normal! a %>%<CR>a
 
 let R_vsplit = 1
 let R_assign_map = "<M-->"
+
+let g:slime_target = "tmux"
+
+let g:python_host_prog = "/usr/bin/python"
+let g:python3_host_prog = '/usr/bin/python3'
+let g:deoplete#enable_at_startup = 1
+
+let g:gruvbox_italic=1
+let g:gruvbox_bold=1
+colorscheme gruvbox
+
+set background=dark
+set termguicolors
