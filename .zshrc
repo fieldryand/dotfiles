@@ -5,7 +5,7 @@ export ZSH=/home/ryan/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="gnzh"
+ZSH_THEME="simple"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -24,7 +24,7 @@ ZSH_THEME="gnzh"
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
-DISABLE_AUTO_TITLE=true
+DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
@@ -49,7 +49,7 @@ DISABLE_AUTO_TITLE=true
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(bundler git zsh-syntax-highlighting)
+plugins=(git zsh-syntax-highlighting)
 
 # User configuration
 
@@ -83,7 +83,26 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+#alias vim="vim --servername VIM"
 #
+alias tmux="TERM=xterm-256color tmux"
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.gem/gems/bin:$PATH"
+export PATH=/opt/local/bin/gem:$PATH
+export GEM_PATH="/home/ryan/.gem/gems"
+export GEM_HOME="/home/ryan/.gem/gems"
+
+PATH=/usr/local/pgsql/bin:$PATH
+export PATH
+export PATH="$PATH:/usr/bin/jdk1.8.0_101/bin"
+export JAVA_HOME="/usr/bin/jdk1.8.0_101/bin"
+
+MANPATH=/usr/local/pgsql/man:$MANPATH
+export MANPATH
+export LC_TIME=en_US.UTF-8
 
 # Change the TERM environment variable (to get 256 colors) even if you are
 # accessing your system through ssh and using either Tmux or GNU Screen:
@@ -98,3 +117,11 @@ then
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/usr/bin/google-cloud-sdk/path.zsh.inc'
+
+# The next line enables shell command completion for gcloud.
+source '/usr/bin/google-cloud-sdk/completion.zsh.inc'
+
+export PSQL_EDITOR='/usr/bin/nvim'
