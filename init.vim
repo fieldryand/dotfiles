@@ -50,7 +50,7 @@ autocmd FileType r inoremap <buffer> <M->> <Esc>:normal! a %>%<CR>a
 autocmd FileType rnoweb inoremap <buffer> > <Esc>:normal! a %>%<CR>a
 autocmd FileType rmd inoremap <buffer> > <Esc>:normal! a %>%<CR>a
 
-let R_vsplit = 1
+autocmd VimResized * let R_rconsole_width = winwidth(0) / 2
 let R_assign_map = "<M-->"
 
 let g:slime_target = "tmux"
