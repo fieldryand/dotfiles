@@ -7,8 +7,11 @@ Plug 'flazz/vim-colorschemes'
 Plug 'chrisbra/csv.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'jpalardy/vim-slime'
-Plug 'vim-syntastic/syntastic'
-Plug 'python-mode/python-mode'
+"Plug 'vim-syntastic/syntastic'
+"Plug 'davidhalter/jedi-vim'
+"Plug 'Valloric/YouCompleteMe'
+"Plug 'zchee/deoplete-jedi'
+Plug 'w0rp/ale'
 
 call plug#end()
 
@@ -50,7 +53,7 @@ autocmd FileType r inoremap <buffer> <M->> <Esc>:normal! a %>%<CR>a
 autocmd FileType rnoweb inoremap <buffer> > <Esc>:normal! a %>%<CR>a
 autocmd FileType rmd inoremap <buffer> > <Esc>:normal! a %>%<CR>a
 
-let R_rconsole_width = 110 " Adjust as needed
+let R_rconsole_width = 110
 let R_assign_map = "<M-->"
 
 let g:slime_target = "tmux"
@@ -65,3 +68,6 @@ colorscheme gruvbox
 
 set background=dark
 set termguicolors
+
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
