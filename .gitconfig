@@ -3,6 +3,5 @@
 	ci = commit
 	br = branch
 	st = status
-[user]
-	email = x@y.com
-	name = x
+[core]
+	editor = nvim
