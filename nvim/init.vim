@@ -7,10 +7,6 @@ Plug 'flazz/vim-colorschemes'
 Plug 'chrisbra/csv.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'jpalardy/vim-slime'
-"Plug 'vim-syntastic/syntastic'
-"Plug 'davidhalter/jedi-vim'
-"Plug 'Valloric/YouCompleteMe'
-"Plug 'zchee/deoplete-jedi'
 Plug 'w0rp/ale'
 
 call plug#end()
@@ -53,14 +49,13 @@ autocmd FileType r inoremap <buffer> <M->> <Esc>:normal! a %>%<CR>a
 autocmd FileType rnoweb inoremap <buffer> > <Esc>:normal! a %>%<CR>a
 autocmd FileType rmd inoremap <buffer> > <Esc>:normal! a %>%<CR>a
 
-let R_rconsole_width = 110
+let R_rconsole_width = 100
 let R_assign_map = "<M-->"
 
 let g:slime_target = "tmux"
 
 let g:python_host_prog = "/usr/bin/python"
 let g:python3_host_prog = '/usr/bin/python3'
-let g:deoplete#enable_at_startup = 1
 
 let g:gruvbox_italic=1
 let g:gruvbox_bold=1
@@ -71,3 +66,4 @@ set termguicolors
 
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
+let g:ale_lint_on_text_changed = 'never'
