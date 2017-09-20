@@ -67,3 +67,4 @@ set termguicolors
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 let g:ale_lint_on_text_changed = 'never'
+let g:ale_r_lintr_options = 'lintr::with_defaults(object_name_linter = NULL)'
