@@ -11,6 +11,8 @@ Plug 'w0rp/ale'
 
 call plug#end()
 
+set clipboard=unnamed
+
 " Minimum required configuration:
 set nocompatible
 syntax on
