@@ -3,7 +3,6 @@ local({r <- getOption("repos"); r["CRAN"] <- "http://cran.rstudio.com"; options(
 if(interactive()){
        # Suggested libraries:
        library(colorout)
-       library(setwidth)
 
        # Use text based web browser to navigate through R docs after help.start()
        # if you cannot run a graphical web browser (e.g. when you are in the
@@ -22,3 +21,5 @@ if((interactive() && Sys.getenv("RSTUDIO") == "") ||
     options(colorout.anyterm = TRUE)
     library(colorout)
 }
+
+options("width" = 200)
