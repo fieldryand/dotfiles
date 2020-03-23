@@ -2,16 +2,17 @@
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'fatih/vim-go'
 Plug 'jalvesaq/Nvim-R'
 Plug 'flazz/vim-colorschemes'
 Plug 'chrisbra/csv.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'jpalardy/vim-slime'
 Plug 'w0rp/ale'
+Plug 'sbdchd/neoformat'
+Plug 'mllg/vim-devtools-plugin'
 
 call plug#end()
-
-set clipboard=unnamed
 
 " Minimum required configuration:
 set nocompatible
@@ -53,11 +54,13 @@ autocmd FileType rmd inoremap <buffer> > <Esc>:normal! a %>%<CR>a
 
 let R_rconsole_width = 100
 let R_assign_map = "<M-->"
+let R_nvim_wd = -1
 
 let g:slime_target = "tmux"
 
 let g:python_host_prog = "/usr/bin/python"
 let g:python3_host_prog = '/usr/bin/python3'
+let g:deoplete#enable_at_startup = 1
 
 let g:gruvbox_italic=1
 let g:gruvbox_bold=1
@@ -70,3 +73,6 @@ nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_r_lintr_options = 'lintr::with_defaults(object_name_linter = NULL)'
+
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
