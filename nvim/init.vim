@@ -48,9 +48,7 @@ set incsearch
 set number
 
 " Map magrittr pipe operator to >
-autocmd FileType r inoremap <buffer> <M->> <Esc>:normal! a %>%<CR>a
-autocmd FileType rnoweb inoremap <buffer> > <Esc>:normal! a %>%<CR>a
-autocmd FileType rmd inoremap <buffer> > <Esc>:normal! a %>%<CR>a
+autocmd FileType r inoremap <buffer> <M->> <Esc>:normal! a \|><CR>a
 
 let R_rconsole_width = 100
 let R_assign_map = "<M-->"
@@ -76,3 +74,6 @@ let g:ale_r_lintr_options = 'lintr::with_defaults(object_name_linter = NULL)'
 
 let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
+let g:go_fmt_options = { 'gofmt': '-s' }
+
+let r_syntax_fun_pattern = 1
